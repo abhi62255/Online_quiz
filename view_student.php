@@ -1,8 +1,6 @@
 <?php
-	error_reporting(E_ALL ^ E_DEPRECATED);
-	$con=mysql_connect('localhost','root','');
-	$i=mysql_select_db('online_quiz',$con);
-	session_start();	
+	include 'database.php';
+	database();	
 	$r=mysql_query("select * from login_details");
 	echo "<table border='1'>";
 	echo "<tr><th>Username</th><th>Password</th></tr>";

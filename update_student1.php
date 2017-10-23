@@ -1,8 +1,6 @@
 <?php
-	error_reporting(E_ALL ^ E_DEPRECATED);
-	$con=mysql_connect('localhost','root','');
-	$i=mysql_select_db('online_quiz',$con);
-	session_start();
+	include 'database.php';
+	database();	
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 	$usernamep=$_POST['usernamep'];

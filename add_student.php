@@ -1,8 +1,6 @@
 <?php
-		error_reporting(E_ALL ^ E_DEPRECATED);
-		$con=mysql_connect('localhost','root','');
-		$i=mysql_select_db('online_quiz',$con);
-		session_start();	
+	include 'database.php';
+	database();	
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
