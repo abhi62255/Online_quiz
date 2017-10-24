@@ -11,10 +11,11 @@
 	}
 	$r=mysql_query("select * from login_details");
 	echo "<table border='1'>";
-	echo "<tr><th>Username</th><th>Password</th><th>Action</th></tr>";
+	echo "<tr><th>Test Id</th><th>Username</th><th>Password</th><th>Action</th></tr>";
 	while($row=mysql_fetch_array($r))
 	{
-		echo "<tr><td>".$row["username"]."</td>";
+		echo "<tr><td>".$row["test_id"]."</td>";
+		echo "<td>".$row["username"]."</td>";
 		echo "<td>".$row["password"]."</td>";
 ?>		<td>
 		<form action=""; method="post">
@@ -36,6 +37,7 @@ if(isset($_POST['submit']))
 ?>
 	<form action="update_student1.php" method="post">
 			<input type="hidden" name="usernamep" value="<?php echo $_POST['usernamep']?>" />
+			Test Id <input type="number" name="test_id" /><br />
 			Name <input type="text" name="username" /><br />
 			Password <input type="password" name="password" /><br />
 			<input type="submit" name="submit" value="Add" /><br />

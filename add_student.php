@@ -11,6 +11,7 @@
 
 <body>
 	<form action=""; method="post">
+		Test Id <input type="number" name="test_id" /><br />
 		Name <input type="text" name="username" /><br />
 		Password <input type="password" name="password" /><br />
 		<input type="submit" name="submit" value="Add" /><br />
@@ -20,12 +21,13 @@
 <?php
 	if(isset($_POST['submit']))
 	{
+		$test_id=$_POST['test_id'];
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 		$r1=mysql_query("select * from login_details where username='$username'");
 		if(mysql_num_rows($r1)==0)
 		{
-			$r=mysql_query("insert into login_details(username,password) values('$username','$password')");	
+			$r=mysql_query("insert into login_details(username,password,test_id) values('$username','$password',$test_id)");	
 			echo "Student Added Successfully";
 		}
 		else

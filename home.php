@@ -14,9 +14,10 @@
 <title>Quiz</title>
 </head>
 
-<body><!--<button onclick="location='home.php'">Finish</button>--><!--<button type="reset" value="Reset">Reset</button>-->
-	<a href="make_test.php">Make Test</a><br />
-	<a href="update_test.php">Update Test</a><br />
+<body>
+	<a href="make_test0.php">Make Test</a><br />
+	<a href="make_test.php">Add Questions</a><br />
+	<a href="update_test.php">Update Questions</a><br />
 	<a href="view_test.php">View Test</a><br />
 	<a href="clear_test.php">Clear Test</a><br />
 	<a href="add_student.php">Add Students</a><br />
