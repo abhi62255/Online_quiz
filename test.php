@@ -19,5 +19,6 @@
 		$_SESSION['negative_marks']=$row['negative_marks'];
 		$_SESSION['marks_per_q']=$row['marks_per_q'];
 		echo "<a href='check.php'>Take Test</a>";
+		echo "<a href=login.php> Exit</a>";
 	}
 ?>

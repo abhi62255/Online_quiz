@@ -24,5 +24,7 @@
 	<a href="view_student.php">View Students</a><br />
 	<a href="update_student.php">Update Students</a><br />
 	<a href="clear_student.php">Clear_student</a><br />
+	<a href="result.php">Result</a><br />
+	
 </body>
 </html>

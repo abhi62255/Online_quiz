@@ -23,7 +23,7 @@
 		if('$result')
 			echo "<br />your test is complted and submitted";
 			
-		echo "<a href=login.php> Exit</a>"
+		echo "<a href=login.php> Exit</a>";
 
 
 
