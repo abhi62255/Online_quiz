@@ -16,7 +16,8 @@
 		<input type="text" name="option_b" placeholder="Option (B)"  />
 		<input type="text" name="option_c" placeholder="Option (C)"  />
 		<input type="text" name="option_d" placeholder="Option (D)"  /><br /><br />
-		Answers &nbsp;a)<input type="checkbox" name="answer[]" value="a"/>&nbsp;
+		Answers &nbsp;
+		a)<input type="checkbox" name="answer[]" value="a"/>&nbsp;
 		b)<input type="checkbox" name="answer[]" value="b"/>&nbsp;
 		c)<input type="checkbox" name="answer[]" value="c"/>&nbsp;
 		d)<input type="checkbox" name="answer[]" value="d"/><br /><br />

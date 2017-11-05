@@ -19,8 +19,19 @@ if(isset($_POST['submit']))
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 	$r=mysql_query("select * from login_details where username='$username' && password='$password'");
-	if(mysql_num_rows($r)==1)
-		header('Location: test.php');
+	if(mysql_num_rows($r)==1){
+		$row=mysql_fetch_array($r);
+		$test_id=$row['test_id'];
+		$r1=mysql_query("select * from result where student_name='$username' && test_id=$test_id");
+		if(mysql_num_rows($r1)==1){
+			echo "your result is already is been submit";
+		}
+		else{
+			$_SESSION['test_id']=$row['test_id'];
+			$_SESSION['username']=$row['username'];
+			header('Location: test.php');
+		}
+	}
 	else 
 		echo "Your Login Credenial Are Wrong";
 		
