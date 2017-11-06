@@ -1,27 +1,30 @@
 <?php
 	include('database.php');
 	database();
-	function time1(){
-				if(!isset($_SESSION['time_g'])){
-					$_SESSION['time_g']=time();
-				 }
-				 $a=explode(":",$_SESSION['time']);
-				 $sec=$a[0]*3600+$a[1]*60;
-				$now=time();
-				if(time()-$_SESSION['time_g']>$sec){
-					$_SESSION['value']=1;
-					unset($_SESSION['time_g']);
-					header('Location: finish.php');
-				}	
-				//echo $_SESSION['time_g']."<br>";
-				//echo $now."<br>";
-				//echo $sec."<br>";
-				echo "Given Time :".gmdate("H:i:s", $sec)."<br>";
-				echo "Time Remaning :".gmdate("H:i:s", $sec-(time()-$_SESSION['time_g']))."<br />";
-				//echo time()-$_SESSION['time_g'];
-				 
-	}
-	time1();
+	if(!isset($time_g)){
+		date_default_timezone_set('Asia/Kolkata');
+		 $hour = date('H');
+		 $min = date('i');
+		 $sec = date('s');
+		 $time=$_SESSION['time'];
+		 $a=explode(":",$time );
+		 $hour1=$a[0];
+		 $min1=$a[1];
+		 $time_g=mktime($hour1,$min1,0,0,0,0)+mktime($hour,$min,$sec,0,0,0);
+		
+	 }
+	$hour = date('H');
+	$min = date('i');
+	$sec = date('s');
+	$now=mktime($hour,$min,$sec,0,0,0);
+	if($now>$time_g){
+		$_SESSION['value']=1;
+		header('Location: finish.php');
+	
+	}	
+	 echo $time_g."<br>";
+	 echo $now."<br>";
+	  
 	 
 	if(isset($_POST['next']))
 	{

@@ -36,8 +36,9 @@ if(isset($_POST['submit']))
 			echo "<h2>Your Result is Already been Submit</h2>";
 		}
 		else{
-			$_SESSION['test_id']=$row['test_id'];
+			$_SESSION['test_id']=$test_id;
 			$_SESSION['username']=$row['username'];
+			echo $_SESSION['test_id'];
 			header('Location: test.php');
 		}
 	}

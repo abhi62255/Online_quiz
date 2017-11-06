@@ -1,4 +1,5 @@
 <?php
+	include'home.php';
 	include'database.php';
 	database();
 ?>
@@ -20,7 +21,7 @@
 		$time=$_POST['time'];
 		$r=mysql_query("insert into test_details values('$subject',$marks_per_q,$negative_marks,'$time',$test_id)");
 		if($r){
-			echo 'inserted';
+			echo 'Tour Test Is Successfuly Created';
 		}
 		else
 			echo "Your test Id is Not Unique";
