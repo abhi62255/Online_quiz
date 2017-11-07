@@ -1,13 +1,14 @@
 <?php
+	include'home.php';
 	include 'database.php';
-	database();	
+
 	if($_SESSION['value']==1){
 		echo "Inserted <br />";
 		$_SESSION['value']=0;
 	}
 ?>	
 	<form action="" method="post">
-		<input type="number" name="test_id" placeholder="Test Id" />
+		<input type="number" name="test_id" placeholder="Test Id" required/>
 		<input type="submit" name="submit" value="Find" />
 	</form>
 <?php

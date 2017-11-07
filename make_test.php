@@ -1,6 +1,6 @@
 <?php
+	include'home.php';
 	include 'database.php';
-	database();	
 
 ?>
 <html>
@@ -46,7 +46,6 @@
 			}
 		if($count==1)
 		{	
-			echo "hello";
 			$count=$count;
 			$r=mysql_query("insert into question (id,question,option_a,option_b,option_c,option_d,answer_1,answer_count,test_id) values($id,'$question','$option_a','$option_b','$option_c','$option_d','$answer0',$count,$test_id)");
 			if($r){
@@ -56,7 +55,6 @@
 		}
 		if($count==2)
 		{	
-			echo "hello";
 			$count=$count;
 			$r=mysql_query("insert into question (id,question,option_a,option_b,option_c,option_d,answer_1,answer_2,answer_count,test_id) values($id,'$question','$option_a','$option_b','$option_c','$option_d','$answer0','$answer1',$count,$test_id)");
 			if($r){
@@ -66,7 +64,6 @@
 		}
 		if($count==3)
 		{	
-			echo "hello";
 			$count=$count;
 			$r=mysql_query("insert into question (id,question,option_a,option_b,option_c,option_d,answer_1,answer_2,answer_3,answer_count,test_id) values($id,'$question','$option_a','$option_b','$option_c','$option_d','$answer0','$answer1','$answer2',$count,$test_id)");
 			if($r){
@@ -76,7 +73,6 @@
 		}
 		if($count==4)
 		{	
-			echo "hello";
 			$count=$count;
 			$r=mysql_query("insert into question (id,question,option_a,option_b,option_c,option_d,answer_1,answer_2,answer_3,answer_4,answer_count,test_id) values($id,'$question','$option_a','$option_b','$option_c','$option_d','$answer0','$answer1','$answer2','$answer3',$count,$test_id)");
 			if($r){

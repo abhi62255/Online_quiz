@@ -1,8 +1,8 @@
 <html>
 <head>
 <title>login</title>
-</head>
 
+</head>
 <body>
 	<form action="" method="post">
 		<input type="text" name="username" placeholder="Username" />

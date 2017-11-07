@@ -1,10 +1,9 @@
 <?php
+include'home.php';
 include 'database.php';
-database();	
 if(isset($_POST['submit']))
 	{
 		$id=$_POST['id'];
-		echo $id;
 ?>
 		<form action="update_test2.php" method="post">
 			<input type="hidden" name="id" value="<?php echo $id ;?>" />

@@ -1,6 +1,6 @@
 <?php
 	include('database.php');
-		database();
+	include'home.php';
 ?>
 <html>
 <head>

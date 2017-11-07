@@ -1,9 +1,9 @@
 <?php
 		include 'database.php';
-		database();
+		include'home.php';
 ?>	
 	<form action="" method="post">
-		<input type="number" name="test_id" placeholder="Test Id" />
+		<input type="number" name="test_id" placeholder="Test Id" required />
 		<input type="submit" name="submit" value="Clear" />
 	</form>
 <?php

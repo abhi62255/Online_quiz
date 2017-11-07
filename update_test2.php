@@ -1,6 +1,5 @@
 <?php
 		include 'database.php';
-		database();	
 		$id=$_POST['id'];
 		$question=$_POST['question'];
 		$option_a=$_POST['option_a'];

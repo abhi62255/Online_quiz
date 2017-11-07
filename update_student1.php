@@ -1,6 +1,5 @@
 <?php
 	include 'database.php';
-	database();	
 	$test_id=$_POST['test_id'];
 	$username=$_POST['username'];
 	$password=$_POST['password'];

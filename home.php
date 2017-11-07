@@ -1,11 +1,6 @@
 <?php
-	session_start();
-	if($_SESSION['value']==1)
-		echo "Test Cleared <br />";	
-	if($_SESSION['value']==2)
-		echo "Student Cleared <br />";
-		
-	$_SESSION['value']=0;
+	if(!isset($_SESSION))
+		session_start();
 
 ?>
 

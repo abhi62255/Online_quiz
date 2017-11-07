@@ -1,6 +1,6 @@
 <?php
 	include 'database.php';
-	database();	
+	include'home.php';
 	if($_SESSION['value']==1){
 		echo "Inserted <br />";
 		$_SESSION['value']=0;
