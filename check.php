@@ -1,6 +1,5 @@
 <?php
 	include('database.php');
-	database();
 	function time1(){
 				if(!isset($_SESSION['time_g'])){
 					$_SESSION['time_g']=time();
@@ -13,18 +12,15 @@
 					unset($_SESSION['time_g']);
 					header('Location: finish.php');
 				}	
-				//echo $_SESSION['time_g']."<br>";
-				//echo $now."<br>";
-				//echo $sec."<br>";
-				echo "Given Time :".gmdate("H:i:s", $sec)."<br>";
-				echo "Time Remaning :".gmdate("H:i:s", $sec-(time()-$_SESSION['time_g']))."<br />";
-				//echo time()-$_SESSION['time_g'];
-				 
+				echo "<div style='background-color:#00FFFF;'><table border='0' cellpadding='14px'>";
+				echo "<tr><th>Given Time :</th><td>".gmdate("H:i:s", $sec)."</td>";
+				echo "<th>Time Remaning :</th><td>".gmdate("H:i:s", $sec-(time()-$_SESSION['time_g']))."</td>";			 
 	}
 	time1();
 	 
 	if(isset($_POST['next']))
 	{
+		unset($_POST['next']);
 		$a=$_POST['a'];
 		$_SESSION['question']=$_SESSION['question']+1;
 		if(!isset($_POST['answer']))
@@ -38,7 +34,6 @@
 				{
 					${"answer" . $i}=$answer[$i];
 				}
-				echo $_SESSION['negative_marks'];
 			if($_SESSION['answer_count']==$count){
 				//Answer count are matching
 				if($count==1){
@@ -106,23 +101,25 @@
 	$r=mysql_query("select * from test_details where test_id=$test_id");
 	while($row=mysql_fetch_array($r))
 	{
-		echo "Subject :".$row['subject']." <br />";
-		echo "Marks Per Question :".$row['marks_per_q']." <br />";
-		echo "Negative Marking Per Question :".$row['negative_marks']." <br />";
-		echo "Time :".$row['time']." <br /><br />";
+		echo "<th>Subject :</th><td>".$row['subject']." </td>";
+		echo "<th>Marks Per Question :</th><td>".$row['marks_per_q']."</td>";
+		echo "<th>Negative Marking Per Question :</th><td>".$row['negative_marks']."</td>";
+		echo "<th>Time :</th><td>".$row['time']." hr</td></tr>";
 	}
+	echo "</table></div>";
 	
 	$sql1="select * from question where test_id=$test_id LIMIT 1 OFFSET $a";
 	$result=mysql_query($sql1);
+	echo "<div style='background-color:#CCCCCC; width:700px;margin-left: 250px;margin-top: 100px;'; width:700px;'><table border='1' cellpadding='14px'>";
 	echo "<form method='post' action=''>";
 	while ($row = mysql_fetch_array($result))
 	{
-		echo"Q".$_SESSION['question']." ".$row['question']." <br /><br />";
-					echo " <input type='checkbox' name='answer' value='a'>a) ".$row['option_a'].
-					" <br /><input type='checkbox' name='answer[]' value='b'>b)".$row['option_b'].
-					" <br /><input type='checkbox' name='answer[]' value='c'>c)  ".$row['option_c'].
-					" <br /><input type='checkbox' name='answer[]' value='d'>d)  ".$row['option_d'].
-					" <br /><br /><br /><br />";
+		echo"<tr><th align='left'>Q".$_SESSION['question']."</th><th align='left'> ".$row['question']."</th></tr>";
+					echo "<tr><th align='left' colspan='2'><input type='checkbox' name='answer' value='a'>a) ".$row['option_a'].
+					"</th></tr><tr><th align='left' colspan='2'><input type='checkbox' name='answer[]' value='b'>b)".$row['option_b'].
+					"</th></tr><tr><th align='left' colspan='2'><input type='checkbox' name='answer[]' value='c'>c)  ".$row['option_c'].
+					"</th></tr><tr><th align='left' colspan='2'><input type='checkbox' name='answer[]' value='d'>d)  ".$row['option_d'].
+					"</th></tr>";
 					$_SESSION['answer_count']=$row['answer_count'];
 					if($row['answer_count']==1){
 						$_SESSION['ans1']=$row['answer_1'];
@@ -146,8 +143,8 @@
 	}
 	$b=$a+1;
 	echo "<input type='hidden' value='$b' name='a'>";
-	echo "<input type='submit' name='next' value='next'> ";
-	echo "<input type='reset' name='reset' value='Reset'>";
+	echo "<tr><th colspan='2' align='center'><input type='submit' name='next' value='SUBMIT' style='height:25px; width:100px; font-weight:bold; background-color:#0099FF; color:#FFFFFF;'></th></tr> ";
 	echo "</form>";
-	echo"<a href='finish.php'>FINISH</a>";
+	echo"<tr><th colspan='2' align='center' width='700px'><button style='height:25px; width:100px; font-weight:bold; background-color:#0099FF; color:#FFFFFF;' width='700px'><a href='finish.php' style='text-decoration:none; color:#FF0000;'>FINISH</a></button></th></tr> ";
+	echo "</table>";
 ?>
